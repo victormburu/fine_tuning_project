@@ -3,7 +3,8 @@ import streamlit as st
 import datetime
 import numpy as np
 import plotly.graph_objects as go
-
+import sys
+import time
 # Helper function to add ordinal suffix to day numbers
 def get_day_suffix(day):
     if 11 <= day <= 13:
@@ -266,6 +267,11 @@ def main():
     
     # Footer
     st.markdown('<div class="footer">Created with ❤️ using Python and Streamlit | Daily Numerology & Astrology Insights</div>', unsafe_allow_html=True)
-
+    
+    # Simulate a delay for the app to run
+    time.sleep(60)
+    print("Daily insight app has finished running.")
+    sys.exit(0)
+    
 if __name__ == "__main__":
     main()
