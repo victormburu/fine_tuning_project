@@ -1,23 +1,30 @@
-# .github/workflows/daily.yml
-name: Daily Insights
+name: Daily Numerology Insights
+
 on:
   schedule:
-    - cron: '0 9 * * *'  # 9 AM UTC
-  workflow_dispatch:
+    - cron: '0 9 * * *'  # 9 AM UTC daily
+  workflow_dispatch:     # Allow manual runs
 
 jobs:
-  generate-insights:
+  generate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: "3.9"
+          
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
           pip install -r requirements.txt
-      - name: Run insights generation
-        run: python scheduler.py
-        timeout-minutes: 5
+          
+      - name: Generate insights
+        run: python daily_insight.py
+        
+      - name: Save report
+        uses: actions/upload-artifact@v3
+        with:
+          name: numerology-report
+          path: numerology_report_*.html

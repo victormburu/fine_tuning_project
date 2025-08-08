@@ -275,3 +275,11 @@ def main():
     
 if __name__ == "__main__":
     main()
+    
+      # Save report as HTML
+    report_date = datetime.date.today().strftime("%Y-%m-%d")
+    with open(f"numerology_report_{report_date}.html", "w") as f:
+        f.write(st.markdown.get_static_html())
+    
+    print(f"Report saved as numerology_report_{report_date}.html")
+    sys.exit(0)

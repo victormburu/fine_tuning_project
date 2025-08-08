@@ -1,5 +1,4 @@
-streamlit
-numpy
-plotly
-schedule
-requests
+streamlit==1.22.0
+schedule==1.1.0
+numpy==1.23.5
+plotly==5.11.0
