@@ -52,13 +52,14 @@ LIFE_PATH = 9
 
 # Get today's numerology day number
 def analyse_day(day_num, today_day):
-    lucky_numbers = [3, 5, 6, 9]
-    unlucky_numbers = [2, 7]
-    neutral_numbers = [1, 4, 8]
-    lucky_dates = ["1st", "3rd", "5th", "6th", "9th", "10th", "12th", "14th", "15th", "18th",
-                  "19th", "21st", "23rd", "24th", "27th", "30th"]
-    neutral_dates = ["4th", "8th", "13th", "17th", "22nd", "26th", "28th", "31st"]
-    unlucky_dates = ["2nd", "7th", "11th", "16th", "20th", "25th", "29th"]
+    lucky_numbers = [3, 6, 9, 18, 27]
+    unlucky_numbers = [1, 4, 5, 7]
+    neutral_numbers = [2, 8]
+    lucky_dates = ["3rd", "6th", "9th", "12th", "15th", "18th",
+                   "21st", "24th", "27th", "30th"]
+    neutral_dates = ["2nd", "8th", "11th", "17th", "20th", "23rd", "26th", "29th", "31st"]
+    unlucky_dates = ["1st", "4th", "5th", "7th", "10th", "13th", 
+                     "14th", "16th", "19th", "22nd", "25th", "28th"]
     
     if today_day in lucky_dates or day_num in lucky_numbers:
         return "Lucky Day", (
